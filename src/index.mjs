@@ -15,7 +15,8 @@ const X_SPACE = 2,
     DECO_DIR = "\x1b[1;36m",
     DECO_FILE = "\x1b[32m",
     END = "\x1b[0m",
-    REGEX_NAME = /^(.*)\/|\.(.*)$/gm;
+    REGEX_BASE = /^(.*)\//gm,
+    REGEX_NAME = /\.(.*)$/gm;
 
 //* Prototypes
 
@@ -86,12 +87,14 @@ export class Dir extends Object {
 
     /**
      * Get a Dir from a real location
-     * @param {String} path 
+     * @param {String} path
+     * @param {Number = Infinity} maxDepth
      * @returns {Dir}
      */
-    static from (path) {
+    static from(path, maxDepth = Infinity) {
+        if (maxDepth-- === 0) return path;
         const dir = new Dir(path);
-        for (let child of FS.readdirSync(path)) dir.pushChild(`${path}/${child}`);
+        for (let child of FS.readdirSync(path)) dir.pushChild(`${path}/${child}`, maxDepth);
         return dir
     }
 
@@ -113,10 +116,12 @@ export class Dir extends Object {
     /**
      * Add a file/folder
      * @param {String} path Starting path
+     * @param {Number} maxDepth
      */
-    pushChild(path) {
-        const name = path.replace(REGEX_NAME, '');
-        if (FS.lstatSync(path).isDirectory()) this[name] = Dir.from(path);
+    pushChild(path, maxDepth) {
+        const base = path.replace(REGEX_BASE, ''),
+            name = base.replace(REGEX_NAME, '') || `_${base.slice(1)}`;
+        if (FS.lstatSync(path).isDirectory()) this[name] = Dir.from(path, maxDepth);
         else this[name] = path;
     };
 

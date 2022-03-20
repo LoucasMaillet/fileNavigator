@@ -81,7 +81,6 @@ for (let child of parentDir) console.log(child);
 // You can also visualize the directory:
 
 console.log(parentDir.tree);
-
 ```
 
 ## 🚀 Deployment <a name = "deployment"></a>
@@ -90,7 +89,11 @@ Build and tested on a linux, no certification this will work on windows but I th
 
 ## 🚀 Limitations <a name = "limitations"></a>
 
-This currently have no support for hidden files/directories, and besides that, the search for child's paths when creating Directory from real location isn't performing, it's a thing to know.
+The search for child's paths when creating Directory from real location isn't performing, it's a thing to know.
+The current support for unix hidden files is to take the same name but replace the first dot with an underscore like that : 
+```
+.vscode -> _vscode 
+```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
