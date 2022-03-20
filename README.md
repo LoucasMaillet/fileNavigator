@@ -1,23 +1,23 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://raw.githubusercontent.com/LoucasMaillet/fileNavigator/main/docs/ico.svg" alt="Project logo"></a>
+ <img height="640px" width="1280px" src="https://raw.githubusercontent.com/LoucasMaillet/fileNavigator/main/docs/ico.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">filenavigator</h3>
+<h3 align="center">FileNavigator</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
+<p align="center">
+  Just a simple module to easely manipulate path : you can iterate over folder, access to his childs like for an object, replacing a part of his path and recursevely the same to his childs, also you can directly use their path in string format, etc ...
 </p>
 
 ## 📝 Table of Contents
@@ -27,88 +27,75 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [Limitations](#limitations)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+The aim behind this was to make life easier when you use way too much paths in your project, and when their not from the same folder, for instance it's very usefull with EJS.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+Just install the packet with npm :
 
 ```
-Give the example
+$ npm install filenavigator
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Like for each npm package :
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+$ npm test
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+```
+/* Imagine you have a folder like that:
+──┮ ..
+  ├──╼ LICENSE
+  ├──╼ README.md
+  ├──┮ docs
+  │  └──╼ ico.svg
+  ├──╼ package.json
+  └──┮ src <-- You're here
+     ├──╼ index.js
+     └──╼ test.js
+*/
+
+const fs = require("fs"),
+      fn = require("filenavigator"),
+      parentDir = fn.Dir.from(".."), // .from is needed if this came from a real path, here we get the parent folder of the script
+      parentDirRoot = parentDir.asRoot(); // Here we make a copy of parentDir but his paths have removed the part from the parent ("..")
+
+// Then you can navigate in the directory:
+
+const ico = fs.readFileSync(parentDir.docs.ico);
+
+for (let child of parentDir) console.log(child);
+
+// You can also visualize the directory:
+
+console.log(parentDir.tree);
+
+```
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+Build and tested on a linux, no certification this will work on windows but I think it's working on, anyway if it doesn't report [here](/issues).
+
+## 🚀 Limitations <a name = "limitations"></a>
+
+This currently have no support for hidden files/directories, and besides that, the search for child's paths when creating Directory from real location isn't performing, it's a thing to know.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- [@loucas](https://github.com/LoucasMaillet) - Idea & Initial work
