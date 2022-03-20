@@ -1,7 +1,7 @@
 {
   "name": "filenavigator",
-  "version": "1.0.4",
-  "description": "To easely manipulate file path",
+  "version": "1.0.5",
+  "description": "A ES module made to easely navigate in the depth of folders",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LoucasMaillet/Modules"
+    "url": "https://github.com/LoucasMaillet/fileNavigator"
   },
   "keywords": [
     "fileNavigator",
