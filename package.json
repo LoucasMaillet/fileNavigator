@@ -1,0 +1,17 @@
+{
+  "name": "filenavigator",
+  "version": "1.0.0",
+  "description": "To easely manipulate file path",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LoucasMaillet/Modules"
+  },
+  "keywords": [
+    "fileNavigator",
+    "file",
+    "navigator"
+  ],
+  "author": "loucasMaillet",
+  "license": "GPL-3.0"
+}
