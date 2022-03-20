@@ -1,15 +1,10 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img height="640px" width="1280px" src="https://raw.githubusercontent.com/LoucasMaillet/fileNavigator/main/docs/ico.svg" alt="Project logo"></a>
-</p>
-
 <h3 align="center">FileNavigator</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/LoucasMaillet/fileNavigator/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/LoucasMaillet/fileNavigator/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
