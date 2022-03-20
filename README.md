@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="tree/main/docs/ico.svg" alt="Project logo"></a>
+ <img src="https://raw.githubusercontent.com/LoucasMaillet/fileNavigator/main/docs/ico.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">filenavigator</h3>
