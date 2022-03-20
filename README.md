@@ -90,9 +90,13 @@ Build and tested on a linux, no certification this will work on windows but I th
 ## 🚀 Limitations <a name = "limitations"></a>
 
 The search for child's paths when creating Directory from real location isn't performing, it's a thing to know.
-The current support for unix hidden files is to take the same name but replace the first dot with an underscore like that : 
+The current transformation to turn file name in object key is like that:
 ```
-.vscode -> _vscode 
+index.js --> index // For normal name
+
+.vscode --> _vscode // For hidden unix name
+
+hello.world.txt --> hello_world // For name with multilple dots
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>

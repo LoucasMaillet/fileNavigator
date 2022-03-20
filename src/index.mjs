@@ -1,10 +1,11 @@
 "use strict"
-
 /**
- * Just a simple script of a path tree.
- * There is currently no support for hidden file (like .vscode).
- * @author Lucas Maillet
- */
+* @file A short script for path navigation
+* @author Loucas Maillet <loucas.maillet.pro@gmail.com>
+* @copyright Loucas Maillet 2022
+* @license GPL-3.0
+*/
+
 
 import * as FS from "fs";
 
@@ -16,7 +17,7 @@ const X_SPACE = 2,
     DECO_FILE = "\x1b[32m",
     END = "\x1b[0m",
     REGEX_BASE = /^(.*)\//gm,
-    REGEX_NAME = /\.(.*)$/gm;
+    REGEX_NAME = /\.([^\.]*)$/gm;
 
 //* Prototypes
 
@@ -120,7 +121,7 @@ export class Dir extends Object {
      */
     pushChild(path, maxDepth) {
         const base = path.replace(REGEX_BASE, ''),
-            name = base.replace(REGEX_NAME, '') || `_${base.slice(1)}`;
+            name = (base.replace(REGEX_NAME, '') || base).replace(/\./gm, '_');
         if (FS.lstatSync(path).isDirectory()) this[name] = Dir.from(path, maxDepth);
         else this[name] = path;
     };
