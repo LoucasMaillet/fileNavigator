@@ -86,7 +86,8 @@ Build and tested on a linux, no certification this will work on windows but I th
 
 ## 🚀 Limitations <a name = "limitations"></a>
 
-The search for child's paths when creating Directory from real location isn't performing, it's a thing to know.
+There is no support for file with the same name but not the same extension.
+Beside that it's good to know that module can slow you're programm if you scan bif folder without setting a depth limit.
 The current transformation to turn file name in object key is like that:
 ```
 index.js --> index // For normal name

@@ -5,9 +5,8 @@
 * @license GPL-3.0
 */
 
-import * as FS from "fs";
-
-const X_SPACE = 2,
+const FS = require("fs"),
+    X_SPACE = 2,
     Y_SPACE = 0,
     X_INDENT = ' '.repeat(X_SPACE),
     X_STROKE = '─'.repeat(X_SPACE),
@@ -30,7 +29,7 @@ String.prototype.__tree__ = function (indent, base) {
 
 //* Class
 
-export class Dir extends Object {
+class Dir extends Object {
 
     /** @type {String} */
     #path;
@@ -144,4 +143,8 @@ export class Dir extends Object {
         for (let k in this) root[k] = this[k].replace(this.#path, '');
         return root;
     }
+}
+
+module.exports = {
+    Dir
 }

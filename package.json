@@ -1,11 +1,14 @@
 {
   "name": "filenavigator",
-  "version": "1.0.6",
-  "description": "A ES module made to easely navigate in the depth of folders",
-  "main": "src/index.js",
-  "type": "module",
+  "version": "1.0.8",
+  "description": "A simple CommonJS/ES module made to easely navigate in the depth of folders",
   "scripts": {
-    "test": "node src/test.mjs"
+    "test": "cd test && node index.js && node index.mjs"
+  },
+  "exports": {
+    "import": "./src/index.mjs",
+    "require": "./src/index.js",
+    "default": "./src/index.js"
   },
   "repository": {
     "type": "git",
