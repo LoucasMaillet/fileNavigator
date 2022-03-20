@@ -1,6 +1,6 @@
 {
   "name": "filenavigator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A ES module made to easely navigate in the depth of folders",
   "main": "src/index.js",
   "type": "module",

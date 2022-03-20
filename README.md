@@ -1,11 +1,11 @@
-<h3 align="center">FileNavigator</h3>
+<h1 align="center">FileNavigator</h1>
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/LoucasMaillet/fileNavigator/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/LoucasMaillet/fileNavigator/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![Version](https://img.shields.io/npm/v/filenavigator?style=flat-square)](https://www.npmjs.com/package/filenavigator)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/LoucasMaillet/fileNavigator?style=flat-square)](https://github.com/LoucasMaillet/fileNavigator/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/LoucasMaillet/fileNavigator?style=flat-square)](https://github.com/LoucasMaillet/fileNavigator/pulls)
+[![License](https://img.shields.io/npm/l/filenavigator?style=flat-square)](/LICENSE)
 
 </div>
 
@@ -14,6 +14,8 @@
 <p align="center">
   Just a simple module to easely manipulate path : you can iterate over folder, access to his childs like for an object, replacing a part of his path and recursevely the same to his childs, also you can directly use their path in string format, etc ...
 </p>
+
+---
 
 ## 📝 Table of Contents
 
